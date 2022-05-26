@@ -25,7 +25,7 @@ function DrawLine(){
 tl.from("#VectorEnd1", {duration:0.15, scale:0, transformOrigin:"left"},"+=0.125")
 .from("#Vector3", {duration:1.75, drawSVG:0},"label")
 .to("#Ellipse3", {duration:1.5, drawSVG:0}, "label")
-.from("#VectorEnd2", {duration:0.25, scale:0, TransformOrigin:"bottom"},"-=0.09")
+.from("#VectorEnd2", {duration:0.35, scale:0, TransformOrigin:"bottom"},"-=0.09")
 ;
 return tl;
 }
@@ -54,10 +54,11 @@ let tl=gsap.timeline();
 tl
 .set("#VectorEnd2", {alpha:0, scale:0})
 
-.to("#Vector3",{duration:1.5, drawSVG:-0, alpha:0},"label2")
-.to("#VectorEnd1", {duration:1.1, alpha:0}, "-=1.36")
+.to("#Vector3",{duration:1.25, drawSVG:-0, alpha:0},"label2")
+.to("#VectorEnd1", {duration:1.1, alpha:0}, "-=1.26")
 
-.to("#Ellipse3", {duration:1.25, drawSVG:"100%"},"label2")
+.to("#Ellipse3", {duration:1.25, drawSVG:"100%", alpha:0},"label2")
+.to("#circle1", {alpha:0, duration:0.75}, "label2")
 
 return tl;
 
@@ -84,7 +85,7 @@ function Wiggle(){
 
 MainTL
 .add(DrawLine())
-.add(DrawCircles(),"-=0.5")
+.add(DrawCircles(),"-=0.1")
 .add(Shutters(),"-=0.75")
 .add(Wiggle())
 .add(Reverse(),"-=0.5")
